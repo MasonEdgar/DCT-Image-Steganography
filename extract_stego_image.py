@@ -37,6 +37,7 @@ sorted_coefficients = [zz.zigzag(block) for block in dct_quants]
 
 # DATA EXTRACTION STAGE
 recovered_data = stego.extract_encoded_data_from_DCT(sorted_coefficients)
+recovered_data.pos = 0
 
 # Determine length of secret message
 data_len = int(recovered_data.read('uint:32') / 8)
